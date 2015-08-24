@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+  <h2>Showing People</h2>
+  <div class='alert alert-success' role='alert'>
+    <p>{{success}}</p>
+  </div>
+  <table class='table table-striped'>
+    <tr>
+      <th>Name</th>
+      <th>Hobby</th>
+    </tr>
+    {% for data in people %}
+      <tr>
+        <td>{{data.name}}</td>
+        <td>{{data.hobby}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock %}

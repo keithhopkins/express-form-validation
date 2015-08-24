@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+  <h2>Add a Puppy</h2>
+  {% if errors %}
+    <div class='alert alert-danger' role='alert-danger'>
+      {% for error in errors %}
+        <p>{{error}}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <form method='POST' action='/puppy/new'>
+    <div class='form-group'>
+      <label for='puppy-name'>Name</label>
+      <input type='text' class='form-control' id='puppy-name' name='name' placeholder='Fido'>
+    </div>
+    <div class='form-group'>
+      <label for='puppy-id'>ID</label>
+      <input type='text' class='form-control' id='puppy-id' name='id' placeholder='5372'>
+    </div>
+    <button type='submit' class='btn btn-default'>Submit</button>
+  </form>
+{% endblock %}
